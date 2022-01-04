@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  <div class="container">
+    <textarea name="" id="TextArea" class="form-control" maxlength="250"  cols="30" rows="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore autem amet aperiam iure a nesciunt consectetur quasi, necessitatibus aspernatur rem natus voluptate laboriosam consequatur vel molestiae, rerum similique iusto beatae aliquam ullam perferendis. Libero numquam quo eum, voluptas exercitationem sunt pariatur iure alias consequuntur delectus impedit amet, beatae tempora rem, tempore iste ab. Doloremque odio nam quidem, laboriosam sunt accusantium nemo eius quasi dicta odit. Nam, magnam architecto minima fugit tempore eligendi molestias odit laborum eveniet nesciunt hic assumenda totam itaque exercitationem? Ratione incidunt sit pariatur, molestias nisi aliquam commodi neque perferendis temporibus. Et fugit, explicabo sit. Adipisci, dolorem nisi!</textarea>
+    <button class="btn btn-primary" id="EditButton">Edit</button>
+    <button class="btn btn-success" id="SubmitButton">Submit</button>
+     <button class="btn btn-danger" id="DeleteButton">Delete</button>
+      </div>
+      
+     
+
+ 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+     <script>
+         $('#TextArea').prop('disabled', true);
+         
+         $('#SubmitButton').hide();
+         $('#SubmitButton').click(() => { 
+             console.log('Ajax request sent');
+             window.location.reload(); });
+         
+         $('#EditButton').click(() => {
+             var isDisabled = $('#TextArea').prop('disabled');
+             $('#TextArea').prop('disabled', !isDisabled);
+            });
+         
+         $('#TextArea').keyup( () => {
+             $('#EditButton').hide();
+             $('#SubmitButton').show();
+         });
+         
+         $('#DeleteButton').click(() => {
+            console.log('Delete ajax request');
+             window.location.reload();
+         });
+            
+            
+      
+      
+      </script>
+      <style>
+          
+          textarea:disabled {
+          
+              color: black;
+              
+          }
+      </style>
+      
+  </body>
+</html>
